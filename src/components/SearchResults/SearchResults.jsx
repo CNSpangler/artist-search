@@ -18,7 +18,12 @@ const SearchResults = ({ artists = [] }) => {
 };
 
 SearchResults.propTypes = {
-  artists: PropTypes.array
+  artists: PropTypes.arrayOf(PropTypes.shape({
+    artistId: PropTypes.string.isRequired,
+    artistName: PropTypes.string.isRequired,
+    artistBorn: PropTypes.string.isRequired,
+    artistDied: PropTypes.string.isRequired
+  }))
 };
 
 export default SearchResults;

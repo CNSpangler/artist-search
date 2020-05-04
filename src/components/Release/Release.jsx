@@ -19,7 +19,10 @@ const Release = ({ songs = [], releaseId = false }) => {
 };
 
 Release.propTypes = {
-  songs: PropTypes.array.isRequired,
+  songs: PropTypes.arrayOf(PropTypes.shape({
+    songId: PropTypes.string.isRequired,
+    songTitle: PropTypes.string.isRequired
+  })).isRequired,
   releaseId: PropTypes.string.isRequired,
 };
 

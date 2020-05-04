@@ -17,7 +17,11 @@ const Artist = ({ releases = [] }) => {
 };
 
 Artist.propTypes = {
-  releases: PropTypes.array
+  releases: PropTypes.arrayOf(PropTypes.shape({
+    releaseId: PropTypes.string.isRequired,
+    releaseTitle: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired
+  }))
 };
 
 export default Artist;
