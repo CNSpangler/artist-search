@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Artist = ({ releases }) => {
+const Artist = ({ releases = [] }) => {
   const releaseElements = releases.map(release => (
     <li key={release.releaseId}>
       <img src={`http://coverartarchive.org/release/${release.releaseId}/front`} />

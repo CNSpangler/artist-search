@@ -3,18 +3,22 @@
 exports[`Release component renders Release 1`] = `
 <Fragment>
   <img
-    src="http://coverartarchive.org/release/undefined/front"
+    src="http://coverartarchive.org/release/false/front"
   />
   <ul>
     <li
       key="1234"
     >
-      Help
+      <span>
+        Help
+      </span>
     </li>
     <li
       key="1235"
     >
-      Halp
+      <span>
+        Halp
+      </span>
     </li>
   </ul>
 </Fragment>

@@ -1,9 +1,9 @@
 import React from 'react';
-import Release from '../Release/Release.jsx';
+import SearchResults from '../SearchResults/SearchResults.jsx';
 export default function App() {
   return (
     <>
-      <Release />
+      <SearchResults />
     </>
   );
 }
