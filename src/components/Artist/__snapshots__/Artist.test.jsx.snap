@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artist component renders Artist 1`] = `
+<ul>
+  <li
+    key="1234"
+  >
+    <img
+      src="http://coverartarchive.org/release/1234/front"
+    />
+    <span>
+      title
+      : 
+      1995-07-11
+    </span>
+  </li>
+  <li
+    key="1235"
+  >
+    <img
+      src="http://coverartarchive.org/release/1235/front"
+    />
+    <span>
+      title2
+      : 
+      1997-07-12
+    </span>
+  </li>
+</ul>
+`;
