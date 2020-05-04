@@ -1,3 +1,4 @@
+// returns array of artists
 export const fetchArtistData = (searchedArtist) => {
   return fetch(`http://musicbrainz.org/ws/2/release?artist=${searchedArtist}&fmt=json`)
     .then(res => res.json())
@@ -10,6 +11,7 @@ export const fetchArtistData = (searchedArtist) => {
     .catch(err => console.log(err));
 };
 
+// returns array of releases
 export const fetchReleaseData = (artistId) => {
   return fetch(`http://musicbrainz.org/ws/2/release?artist=${artistId}&fmt=json`)
     .then(res => res.json())
@@ -21,6 +23,7 @@ export const fetchReleaseData = (artistId) => {
     .catch(err => console.log(err));
 };
 
+// returns array of songs
 export const fetchSongs = (releaseId) => {
   return fetch(`http://musicbrainz.org/ws/2/recording?release=${releaseId}&fmt=json`)
     .then(res => res.json())
@@ -31,6 +34,7 @@ export const fetchSongs = (releaseId) => {
     .catch(err => console.log(err));
 };
 
+// returns object with lyrics: "fa la la la la"
 export const fetchLyrics = (artistName, songTitle) => {
   return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
     .then(res => res.lyrics)

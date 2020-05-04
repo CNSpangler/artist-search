@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Release = ({ songs, releaseId }) => {
   const songElements = songs.map(song => (
     <li key={song.songId}>
-      {song.songTitle}
+      <span>{song.songTitle}</span>
     </li>
   ));
 

@@ -1,26 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Artist = ({ searchedArtist }) => {
-  const songElements = songs.map(song => (
-    <li key={song.songId}>
-      {song.songTitle}
+const Artist = ({ releases }) => {
+  const releaseElements = releases.map(release => (
+    <li key={release.releaseId}>
+      <img src={`http://coverartarchive.org/release/${release.releaseId}/front`} />
+      <span>{release.releaseTitle}: {release.releaseDate}</span>
     </li>
   ));
 
   return (
-    <>
-      <img src={`http://coverartarchive.org/Artist/${ArtistId}/front`} />
-      <ul>
-        {songElements}
-      </ul>
-    </>
+    <ul>
+      {releaseElements}
+    </ul>
   );
 };
 
 Artist.propTypes = {
-  songs: PropTypes.array.isRequired,
-  ArtistId: PropTypes.string.isRequired,
+  releases: PropTypes.array
 };
 
 export default Artist;
