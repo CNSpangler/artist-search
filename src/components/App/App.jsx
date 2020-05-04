@@ -1,10 +1,9 @@
 import React from 'react';
-import Song from './Song/Song';
-
+import Release from '../Release/Release.jsx';
 export default function App() {
   return (
     <>
-      <Song />
+      <Release />
     </>
   );
 }

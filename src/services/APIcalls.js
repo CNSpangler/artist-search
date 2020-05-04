@@ -17,7 +17,8 @@ export const fetchReleaseData = (artistId) => {
       releaseId: release.id,
       releaseTitle: release.title,
       releaseDate: release.date
-    })));
+    })))
+    .catch(err => console.log(err));
 };
 
 export const fetchSongs = (releaseId) => {
@@ -26,10 +27,12 @@ export const fetchSongs = (releaseId) => {
     .then(json => json.recordings.map(song => ({
       songId: song.id,
       songTitle: song.title,
-    })));
+    })))
+    .catch(err => console.log(err));
 };
 
 export const fetchLyrics = (artistName, songTitle) => {
   return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
-    .then(res => res.lyrics);
+    .then(res => res.lyrics)
+    .catch(err => console.log(err));
 };
