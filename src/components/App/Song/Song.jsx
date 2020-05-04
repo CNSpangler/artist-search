@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Song = ({ songTitle = 'Song Title', songLyrics = 'No Lyrics Found' }) => (
+const Song = ({ songTitle = 'Help!', songLyrics = 'No Lyrics Found' }) => (
   <>
     <h3>{songTitle}</h3>
     <p>{songLyrics}</p>

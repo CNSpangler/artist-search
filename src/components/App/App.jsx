@@ -1,6 +1,10 @@
 import React from 'react';
+import Song from './Song/Song';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Song />
+    </>
+  );
 }
-  
