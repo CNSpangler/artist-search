@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { fetchReleaseData } from '../../services/APIcalls';
 import { useParams } from 'react-router-dom';
-import Discography from '../Discography/Discography.jsx';
+import Discography from '../../components/Discography/Discography.jsx';
 
 const Artist = () => {
   const [releases, setReleases] = useState([]);

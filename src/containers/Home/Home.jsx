@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { fetchArtistData } from '../services/APIcalls.js';
-import Search from '../components/Search/Search.jsx';
+import { fetchArtistData } from '../../services/APIcalls.js';
+import Search from '../../components/Search/Search.jsx';
 // import Paging from '../components/Paging/Paging.jsx';
-import SearchResults from '../components/SearchResults/SearchResults';
+import SearchResults from '../../components/SearchResults/SearchResults';
 
 const Home = () => {
   const [searchedArtist, setSearchedArtist] = useState('');
