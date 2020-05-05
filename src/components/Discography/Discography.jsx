@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Discography = ({ releases }) => {
   const releaseElements = releases.map(release => (
     <li key={release.releaseId}>
-      <Link>
+      <Link to={`/releases/${release.releaseId}`}>
         <img src={`http://coverartarchive.org/release/${release.releaseId}/front`} />
         <span>{release.releaseTitle}: {release.releaseDate}</span>
       </Link>

@@ -28,7 +28,7 @@ export const fetchSongs = (releaseId) => {
     .then(res => res.json())
     .then(json => json.recordings.map(song => ({
       songId: song.id,
-      songTitle: song.title,
+      songTitle: song.title
     })));
 };
 

@@ -13,9 +13,7 @@ const Artist = () => {
       .then(results => setReleases([...results]));
   }, []);
 
-  return (
-    <Discography releases={releases} />
-  );
+  return <Discography releases={releases} />;
 };
 
 Artist.propTypes = {

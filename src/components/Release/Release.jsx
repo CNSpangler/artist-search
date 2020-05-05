@@ -1,21 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { fetchSongs } from '../../services/APIcalls';
+import TrackList from '../TrackList/TrackList.jsx';
 
 const Release = ({ songs = [], releaseId = false }) => {
-  const songElements = songs.map(song => (
-    <li key={song.songId}>
-      <span>{song.songTitle}</span>
-    </li>
-  ));
+  const [tracks, setTracks] = useState([]);
+  const { releaseId } = useParams();
 
-  return (
-    <>
-      <img src={`http://coverartarchive.org/release/${releaseId}/front`} />
-      <ul>
-        {songElements}
-      </ul>
-    </>
-  );
+  useEffect(() => {
+    fetchSongs(releaseId)
+      .then(results => setTracks(results));
+  }, []);
+
+  return <TrackList tracks={tracks} />;
 };
 
 Release.propTypes = {
