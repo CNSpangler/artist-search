@@ -6,7 +6,7 @@ const TrackList = ({ artistName, tracks }) => {
   const trackElements = tracks.map(track => (
     <li key={track.songId}>
       <Link to={{
-        pathname: `/tracks/${track.songTitle}/${artistName}/${track.songId}`,
+        pathname: `/tracks/${artistName}/${track.songId}`,
         songTitle: track.songTitle
       }} >
         <span>{track.songTitle}</span>

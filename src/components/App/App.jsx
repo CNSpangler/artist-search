@@ -16,7 +16,7 @@ export default function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/:artistName/:artistId" component={Artist} />
         <Route exact path="/releases/:artistName/:releaseId" component={Release} />
-        <Route exact path="/tracks/:songTitle/:artistName/:songId/" component={Song} />
+        <Route exact path="/tracks/:artistName/:songId/" component={Song} />
       </Switch>
     </Router>
   );

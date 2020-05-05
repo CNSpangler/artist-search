@@ -4,9 +4,10 @@ import Lyrics from '../../components/Lyrics/Lyrics';
 import { fetchLyrics } from '../../services/APIcalls';
 import { useParams } from 'react-router-dom';
 
-const Song = () => {
+const Song = (props) => {
   const [lyrics, setLyrics] = useState();
-  const { artistName, songTitle } = useParams();
+  const { artistName } = useParams();
+  const songTitle = props.location.songTitle;
 
   useEffect(() => {
     fetchLyrics(artistName, songTitle)
