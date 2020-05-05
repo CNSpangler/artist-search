@@ -5,10 +5,10 @@ export const fetchArtistData = (searchedArtist) => {
     .then(json => json.artists.map(artist => ({
       artistId: artist.id,
       artistName: artist.name,
+      artistAbout: artist.disambiguation,
       artistBorn: artist['life-span'].begin,
       artistDied: artist['life-span'].ended
-    })))
-    .catch(err => console.log(err));
+    })));
 };
 
 // returns array of releases
@@ -19,8 +19,7 @@ export const fetchReleaseData = (artistId) => {
       releaseId: release.id,
       releaseTitle: release.title,
       releaseDate: release.date
-    })))
-    .catch(err => console.log(err));
+    })));
 };
 
 // returns array of songs
@@ -30,13 +29,12 @@ export const fetchSongs = (releaseId) => {
     .then(json => json.recordings.map(song => ({
       songId: song.id,
       songTitle: song.title,
-    })))
-    .catch(err => console.log(err));
+    })));
 };
 
 // returns object with lyrics: "fa la la la la"
 export const fetchLyrics = (artistName, songTitle) => {
   return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
-    .then(res => res.lyrics)
-    .catch(err => console.log(err));
+    .then(res => res.json())
+    .then(json => json.lyrics);
 };
