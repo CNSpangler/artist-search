@@ -13,7 +13,7 @@ const Song = () => {
       .then(results => setLyrics(results));
   }, []);
   
-  return <Lyrics lyrics={lyrics} />;
+  return <Lyrics artistName={artistName} songTitle={songTitle} lyrics={lyrics} />;
 };
 
 Song.propTypes = {
