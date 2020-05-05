@@ -22,7 +22,7 @@ SearchResults.propTypes = {
     artistId: PropTypes.string.isRequired,
     artistName: PropTypes.string.isRequired,
     artistBorn: PropTypes.string.isRequired,
-    artistDied: PropTypes.string.isRequired
+    artistDied: PropTypes.string.isRequired                     
   }))
 };
 

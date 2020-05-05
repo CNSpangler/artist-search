@@ -4,7 +4,7 @@ export const fetchArtistData = (searchedArtist) => {
     .then(res => res.json())
     .then(json => json.artists.map(artist => ({
       artistId: artist.id,
-      artistName: artist.name,
+      DartistName: artist.name,
       artistBorn: artist.life-span.begin,
       artistDied: artist.life-span.ended
     })))
