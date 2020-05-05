@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { fetchArtistData } from '../services/APIcalls.js';
 import Search from '../components/Search/Search.jsx';
 import Paging from '../components/Paging/Paging.jsx';
 import SearchResults from '../components/SearchResults/SearchResults';
@@ -13,10 +14,9 @@ const Home = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // api call
-    // set result in state
-    // below, pass result to component
-  }
+    fetchArtistData(searchedArtist)
+      .then(res => setSearchResults(res));
+  };
   
   return (
     <>
