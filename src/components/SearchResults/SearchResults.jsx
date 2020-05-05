@@ -6,7 +6,7 @@ const SearchResults = ({ artists = [] }) => {
     <li key={artist.artistId}>
       <p>{artist.artistName}</p>
       <p>Born: {artist.artistBorn}</p>
-      <p>Died: {artist.artistDied}</p>
+      {artist.artistDied && <p>Died: {artist.artistDied}</p>}
     </li>
   ));
 

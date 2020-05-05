@@ -1,12 +1,12 @@
 // returns array of artists
 export const fetchArtistData = (searchedArtist) => {
-  return fetch(`http://musicbrainz.org/ws/2/release?artist=${searchedArtist}&fmt=json`)
+  return fetch(`http://musicbrainz.org/ws/2/artist?query=${searchedArtist}&fmt=json&limit=25`)
     .then(res => res.json())
     .then(json => json.artists.map(artist => ({
       artistId: artist.id,
-      DartistName: artist.name,
-      artistBorn: artist.life-span.begin,
-      artistDied: artist.life-span.ended
+      artistName: artist.name,
+      artistBorn: artist['life-span'].begin,
+      artistDied: artist['life-span'].ended
     })))
     .catch(err => console.log(err));
 };

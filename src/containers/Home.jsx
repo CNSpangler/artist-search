@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { fetchArtistData } from '../services/APIcalls.js';
 import Search from '../components/Search/Search.jsx';
-import Paging from '../components/Paging/Paging.jsx';
+// import Paging from '../components/Paging/Paging.jsx';
 import SearchResults from '../components/SearchResults/SearchResults';
 
 const Home = () => {
@@ -12,16 +12,16 @@ const Home = () => {
     setSearchedArtist(target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSearch = (e) => {
     e.preventDefault();
     fetchArtistData(searchedArtist)
-      .then(res => setSearchResults(res));
+      .then(searchedArtists => setSearchResults(searchedArtists));
   };
   
   return (
     <>
-      <Search handleInputChange={onInputChange} handleSubmit={onSubmit} />
-      <Paging />
+      <Search handleInputChange={onInputChange} handleSearch={onSearch} />
+      {/* <Paging /> */}
       {searchResults && <SearchResults artists={searchResults} />}
     </>
   );
