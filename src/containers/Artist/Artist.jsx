@@ -6,14 +6,14 @@ import Discography from '../../components/Discography/Discography.jsx';
 
 const Artist = () => {
   const [releases, setReleases] = useState([]);
-  const { artistId } = useParams();
+  const { artistId, artistName } = useParams();
 
   useEffect(() => {
     fetchReleaseData(artistId)
       .then(results => setReleases([...results]));
   }, []);
 
-  return <Discography releases={releases} />;
+  return <Discography releases={releases} artistName={artistName} />;
 };
 
 Artist.propTypes = {

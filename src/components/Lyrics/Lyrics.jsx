@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Song = ({ songTitle = 'Help!', songLyrics = 'No Lyrics Found' }) => (
+const Lyrics = ({ songTitle = 'Help!', songLyrics = 'No Lyrics Found' }) => (
   <>
     <h3>{songTitle}</h3>
     <p>{songLyrics}</p>
   </>
 );
 
-Song.propTypes = {
+Lyrics.propTypes = {
   songTitle: PropTypes.string.isRequired,
   songLyrics: PropTypes.string
 };
 
-export default Song;
+export default Lyrics;

@@ -5,7 +5,9 @@ exports[`Discography component renders Discography 1`] = `
   <li
     key="1234"
   >
-    <Link>
+    <Link
+      to="/releases/1234"
+    >
       <img
         src="http://coverartarchive.org/release/1234/front"
       />
@@ -19,7 +21,9 @@ exports[`Discography component renders Discography 1`] = `
   <li
     key="1234"
   >
-    <Link>
+    <Link
+      to="/releases/1234"
+    >
       <img
         src="http://coverartarchive.org/release/1234/front"
       />

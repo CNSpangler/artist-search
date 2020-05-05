@@ -5,7 +5,13 @@ import PropTypes from 'prop-types';
 const SearchResults = ({ artists = [] }) => {
   const artistElements = artists.map(artist => (
     <li key={artist.artistId}>
-      <Link to={`/artists/${artist.artistId}`}>
+      <Link to={{
+        pathname: `/${artist.artistName}/${artist.artistId}`,
+        artistProps: {
+          artistName: artist.artistName,
+          artistAbout: artist.artistAbout
+        }        
+      }}>
         <p>{artist.artistName}</p>
         <p>{artist.artistAbout}</p>
         {artist.artistBorn && <p>Born: {artist.artistBorn}</p>}
