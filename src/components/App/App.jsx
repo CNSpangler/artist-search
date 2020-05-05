@@ -1,9 +1,17 @@
 import React from 'react';
-import SearchResults from '../SearchResults/SearchResults.jsx';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import Home from '../../containers/Home.jsx';
+
 export default function App() {
   return (
-    <>
-      <Home />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }

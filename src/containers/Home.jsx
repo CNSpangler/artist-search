@@ -6,10 +6,21 @@ import SearchResults from '../components/SearchResults/SearchResults';
 const Home = () => {
   const [searchedArtist, setSearchedArtist] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+
+  const onInputChange = ({ target }) => {
+    setSearchedArtist(target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // api call
+    // set result in state
+    // below, pass result to component
+  }
   
   return (
     <>
-      <Search />
+      <Search handleInputChange={onInputChange} handleSubmit={onSubmit} />
       <Paging />
       {searchResults && <SearchResults artists={searchResults} />}
     </>
