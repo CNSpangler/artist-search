@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Paging = ({ artists, offset, decrement, increment, updateOffset }) => (
+const Paging = ({ artists, updatePage, page }) => (
   <>
-    <button onClick={decrement} disabled={offset === 0}>&lt;</button>
-    <button onClick={increment} disabled={artists.length < 25}>&gt;</button>
+    <button onClick={() => updatePage(-1)} disabled={page === 1}>&lt;</button>
+    <button onClick={() => updatePage(1)} disabled={artists.length < 25}>&gt;</button>
   </>
 );
 
 Paging.propTypes = {
-  offset: PropTypes.number,
-  updateOffset: PropTypes.func.isRequired,
+  updatePage: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
   artists: PropTypes.arrayOf(PropTypes.shape({
     artistId: PropTypes.string.isRequired,
     artistName: PropTypes.string.isRequired,

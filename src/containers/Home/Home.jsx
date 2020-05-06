@@ -9,9 +9,6 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [page, setPage] = useState(1);
 
-  const increment = () => setPage(prevPage => prevPage + 1);
-  const decrement = () => setPage(prevPage => prevPage - 1);
-
   const onInputChange = ({ target }) => {
     setSearchedArtist(target.value);
   };
@@ -21,15 +18,16 @@ const Home = () => {
     fetchArtistData(searchedArtist)
       .then(searchedArtists => setSearchResults(searchedArtists));
   };
-
-  const onOffsetChange = (num) => {
-    // do stuff with num
-  };
   
+  const updatePage = by => setPage(prevPage => prevPage + by);
+
   return (
     <>
       <Search handleInputChange={onInputChange} handleSearch={onSearch} />
-      {searchResults.length !== 0 && <Paging artists={searchResults} increment={increment} decrement={decrement} updateOffset={onOffsetChange} />}
+      {
+        searchResults.length > 25 && 
+        <Paging artists={searchResults} page={page} updatePage={updatePage} />
+      }
       {searchResults && <SearchResults artists={searchResults} />}
     </>
   );
