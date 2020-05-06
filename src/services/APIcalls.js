@@ -1,6 +1,6 @@
 // returns array of artists
-export const fetchArtistData = (searchedArtist, page) => {
-  return fetch(`http://musicbrainz.org/ws/2/artist?query=${searchedArtist}&fmt=json&limit=${page}`)
+export const fetchArtistData = (searchedArtist, offset) => {
+  return fetch(`http://musicbrainz.org/ws/2/artist?query=${searchedArtist}&fmt=json&limit=25&offset=${offset}`)
     .then(res => res.json())
     .then(json => json.artists.map(artist => ({
       artistId: artist.id,

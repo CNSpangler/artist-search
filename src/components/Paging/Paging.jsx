@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Paging = ({ artists, updateOffset, offset }) => (
   <>
-    <button onClick={() => updateOffset(-25)} disabled={offset === 1}>&lt;</button>
+    <button onClick={() => updateOffset(-25)} disabled={offset === 0}>&lt;</button>
     <button onClick={() => updateOffset(25)} disabled={artists.length < 25}>&gt;</button>
   </>
 );

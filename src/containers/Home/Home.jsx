@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { fetchArtistData } from '../../services/APIcalls.js';
 import Search from '../../components/Search/Search.jsx';
 import Paging from '../../components/Paging/Paging.jsx';
@@ -15,20 +15,26 @@ const Home = () => {
 
   const onSearch = (e) => {
     e.preventDefault();
-    fetchArtistData(searchedArtist)
+    fetchArtistData(searchedArtist, offset)
       .then(searchedArtists => setSearchResults(searchedArtists));
   };
   
   const updateOffset = by => setOffset(prevOffset => prevOffset + by);
 
+  useEffect(() => {
+    fetchArtistData(searchedArtist, offset)
+      .then(searchedArtists => setSearchResults(searchedArtists));
+  }, [offset]);
+
   return (
     <>
       <Search handleInputChange={onInputChange} handleSearch={onSearch} />
-      {
+      {/* {
         searchResults.length > 25 && 
         <Paging artists={searchResults} offset={offset} updateOffset={updateOffset} />
-      }
-      {searchResults && <SearchResults artists={searchResults} />}
+      } */}
+      <Paging artists={searchResults} offset={offset} updateOffset={updateOffset} />
+      <SearchResults artists={searchResults} />
     </>
   );
 };
