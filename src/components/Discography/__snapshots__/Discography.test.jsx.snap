@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Discography component renders Discography 1`] = `
+<ul>
+  <li
+    key="1234"
+  >
+    <Link
+      to="/releases/undefined/1234"
+    >
+      <img
+        onError={[Function]}
+        src="http://coverartarchive.org/release/1234/front"
+      />
+      <span>
+        Jock Jamz
+        : 
+        1985
+      </span>
+    </Link>
+  </li>
+  <li
+    key="1234"
+  >
+    <Link
+      to="/releases/undefined/1234"
+    >
+      <img
+        onError={[Function]}
+        src="http://coverartarchive.org/release/1234/front"
+      />
+      <span>
+        Jock Jamzz
+        : 
+        1986
+      </span>
+    </Link>
+  </li>
+</ul>
+`;
