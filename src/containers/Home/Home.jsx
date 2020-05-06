@@ -7,7 +7,7 @@ import SearchResults from '../../components/SearchResults/SearchResults';
 const Home = () => {
   const [searchedArtist, setSearchedArtist] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [page, setPage] = useState(1);
+  const [offset, setOffset] = useState(0);
 
   const onInputChange = ({ target }) => {
     setSearchedArtist(target.value);
@@ -19,14 +19,14 @@ const Home = () => {
       .then(searchedArtists => setSearchResults(searchedArtists));
   };
   
-  const updatePage = by => setPage(prevPage => prevPage + by);
+  const updateOffset = by => setOffset(prevOffset => prevOffset + by);
 
   return (
     <>
       <Search handleInputChange={onInputChange} handleSearch={onSearch} />
       {
         searchResults.length > 25 && 
-        <Paging artists={searchResults} page={page} updatePage={updatePage} />
+        <Paging artists={searchResults} offset={offset} updateOffset={updateOffset} />
       }
       {searchResults && <SearchResults artists={searchResults} />}
     </>
