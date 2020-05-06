@@ -6,9 +6,10 @@ exports[`Discography component renders Discography 1`] = `
     key="1234"
   >
     <Link
-      to="/releases/1234"
+      to="/releases/undefined/1234"
     >
       <img
+        onError={[Function]}
         src="http://coverartarchive.org/release/1234/front"
       />
       <span>
@@ -22,9 +23,10 @@ exports[`Discography component renders Discography 1`] = `
     key="1234"
   >
     <Link
-      to="/releases/1234"
+      to="/releases/undefined/1234"
     >
       <img
+        onError={[Function]}
         src="http://coverartarchive.org/release/1234/front"
       />
       <span>

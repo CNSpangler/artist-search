@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const TrackList = ({ artistName, tracks }) => {
+const TrackList = ({ artistName, tracks = [] }) => {
   const trackElements = tracks.map(track => (
     <li key={track.songId}>
       <Link to={{
